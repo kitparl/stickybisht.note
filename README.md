@@ -1,67 +1,53 @@
-# StickyBisht Note
+# StickyBisht
 
-A customizable sticky notes application for Linux and Windows desktop environments.
+A lightweight, customizable sticky notes application built with Python and Tkinter.
 
 ## Project Structure
 ```
-stickybisht.note/
+stickybisht/
 ├── LICENSE
 ├── README.md
 ├── pyproject.toml
-├── setup.cfg
 ├── src/
 │   └── stickybisht/
 │       ├── __init__.py
 │       ├── __main__.py
-│       ├── sticky_notes.py
-│       └── resources/
-│           └── icons/
-│               └── sticky.png
-├── scripts/
-│   ├── stickybisht
-│   └── stickybisht.bat
-├── .gitignore
+│       └── sticky_notes.py
 └── requirements.txt
 ```
 
-## Installation Methods
+## Installation
 
-### From PyPI (All Platforms)
 ```bash
-pip install stickybisht-note
+pip install stickybisht
 ```
 
-### Linux Package Managers
+## Usage
 
-#### Fedora
+After installation, you can run the application in two ways:
+
+1. From command line:
 ```bash
-sudo dnf install python3-tkinter
-sudo dnf install stickybisht-note
+stickybisht
 ```
 
-#### Ubuntu
-```bash
-sudo apt install python3-tk
-sudo apt install stickybisht-note
+2. From Python:
+```python
+from stickybisht import StickyNote
+note = StickyNote()
+note.run()
 ```
 
-#### Arch Linux
-```bash
-sudo pacman -S python-tk
-yay -S stickybisht-note
-```
+## Dependencies
+- Python 3.8+
+- tkinter (usually comes with Python)
 
-### Windows
-1. Download the latest release from GitHub Releases
-2. Run the installer (.exe)
-3. Launch from Start Menu
-
-## Development Setup
+## Development
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/kitparl/stickybisht.note
-cd stickybisht.note
+git clone https://github.com/kitparl/stickybisht
+cd stickybisht
 ```
 
 2. Create and activate virtual environment:
@@ -71,29 +57,11 @@ source venv/bin/activate  # Linux/macOS
 venv\Scripts\activate     # Windows
 ```
 
-3. Install development dependencies:
+3. Install in development mode:
 ```bash
-pip install -e ".[dev]"
+pip install -e .
 ```
 
-## Dependencies
-- Python 3.8+
-- tkinter
-- pathlib
+## License
 
-## Building from Source
-
-### Linux/macOS
-```bash
-python -m build
-```
-
-### Windows
-```bash
-python -m build
-```
-
-## Running Tests
-```bash
-pytest tests/
-```
+MIT License
