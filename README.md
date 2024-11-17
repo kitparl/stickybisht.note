@@ -1,6 +1,6 @@
 # StickyBisht
 
-A lightweight, customizable sticky notes application built with Python and Tkinter.
+A lightweight, customizable(still working) sticky notes application built with Python and Tkinter.
 
 ## Project Structure
 
