@@ -44,7 +44,7 @@ Requires Python 3.8+ with a working Tkinter. On macOS, prefer Homebrew Python wi
 
 On macOS, the red traffic-light close button **hides** the note (process keeps running). Use the right-click **Exit** menu item or `stickybisht quit` to fully quit. On Linux, the custom `×` does the same hide; `-` collapses.
 
-If `stickybisht` aborts on macOS but `python -c "import tkinter; tkinter.Tk().destroy()"` works, try `python -m stickybisht` instead.
+If `stickybisht` errors on macOS about Apple’s system Tk 8.5, the `stickybisht` on your `PATH` is bound to `/usr/bin/python3`. Use Homebrew Python with Tk or the project `.venv` instead.
 
 ### In-app shortcuts
 
@@ -176,7 +176,7 @@ python -m stickybisht
 ## Notes and limitations
 
 - On macOS, if the note appears after a hotkey but keystrokes still go to the previous app, click the note once; a future `.app` bundle will activate via LaunchServices more cleanly.
-- Some Homebrew Tk builds abort with `macOS 15 (1507) required…` on slightly older 15.x builds — update macOS or use the python.org installer.
+- Apple’s Command Line Tools / `/usr/bin/python3` ships Tcl/Tk 8.5, which aborts on macOS x.7 security updates (`macOS 15 (1507) or later required, have instead 15 (1506) !`). That check lives in Apple’s Tk `TkpInit`, not in StickyBisht. Use Homebrew `python-tk` or the python.org installer.
 - Under Wayland (e.g. Hyprland), Tk runs via XWayland; positioning and always-on-top depend on the compositor.
 - One note per user session (single instance). Multiple notes are a later enhancement.
 

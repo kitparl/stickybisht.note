@@ -29,6 +29,14 @@ def _run_app() -> int:
         print("  macOS: use a Python build that includes Tk (python.org or Homebrew python-tk)", file=sys.stderr)
         return 1
 
+    from .platform_compat import macos_system_tk_is_unsafe
+
+    unsafe = macos_system_tk_is_unsafe()
+    if unsafe:
+        print(f"Error: {unsafe}", file=sys.stderr)
+        print(f"Python: {sys.executable}", file=sys.stderr)
+        return 1
+
     from .stickybisht_notes import StickyNote
 
     try:
