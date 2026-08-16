@@ -1,3 +1,7 @@
+## [0.2.1] - 2026-08-16
+### Fixed
+- On macOS, detect Apple's broken system Tk 8.5 and exit with install guidance instead of aborting
+
 ## [0.2.0] - 2026-08-07
 ### Added
 - macOS support (skip X11-only window attributes that crashed on Mac)
